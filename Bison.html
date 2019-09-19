@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<style>
+		
+		body {
+			font-family: Arial,Verdana,Sans-Serif;
+			background: left 5% / 15% 99% repeat url("80sbg.gif"),
+			linear-gradient(193deg, #23b28d, #23a6b2, #c0e3e6);
+			
+			background-size: 50% 50%, 600% 600%;
+
+			-webkit-animation: AnimationName 37s ease infinite;
+			-moz-animation: AnimationName 37s ease infinite;
+			-o-animation: AnimationName 37s ease infinite;
+			animation: AnimationName 37s ease infinite;
+
+			@-webkit-keyframes AnimationName {
+				0%{background-position:0% 67%}
+				50%{background-position:100% 34%}
+				100%{background-position:0% 67%}
+			}
+			@-moz-keyframes AnimationName {
+				0%{background-position:0% 67%}
+				50%{background-position:100% 34%}
+				100%{background-position:0% 67%}
+			}
+			@-o-keyframes AnimationName {
+				0%{background-position:0% 67%}
+				50%{background-position:100% 34%}
+				100%{background-position:0% 67%}
+			}
+			@keyframes AnimationName {
+				0%{background-position:0% 67%}
+				50%{background-position:100% 34%}
+				100%{background-position:0% 67%}
+			}
+			}
+			ul.examp1 {
+				  
+				  margin: 0;
+				  padding: 0;
+				  width: 200px;
+				  background-image: url("bg.gif");
+				  background-size: 25% 25%;
+				  font-size: 35px;
+				  font-color: white;
+				  border:30px solid;
+				  border-image:url("fans.gif");
+				 
+				}
+
+				.list  {
+				  display: block;
+				  color: #098690;
+				  padding: 80px 16px;
+				  text-decoration: none;
+				}
+
+				/* Change the link color on hover */
+				.list1 {
+				  background-color: #0090323;
+				  color: white;
+				}
+							
+		 p.example1 {
+            border:10px solid;
+            border-bottom-color:yellow; 
+            border-top-color:yellow;    
+            border-left-color:yellow;   
+            border-right-color:yellow;  
+         }
+         h1.example2 {
+            border:10px solid;
+            border-color:#009900;        
+         }
+			
+		h1   {font-size: 50px; font-family: New Century Schoolbook,
+			 TeX Gyre Schola, serif; background-color:#9138d1;
+			 text-align:center; color: #332930;
+			 box-sizing: border-box; box-shadow: 50px 10px;
+			 }
+		p.example2    {font: 400 100px/1.3 'Oleo Script', Helvetica, sans-serif;; background-color:#009991;
+			 text-align: center; color: #002102;
+			 }
+		h2	 {font: 400 100px/1.3 'Berkshire Swash', Helvetica, sans-serif; background-color:#009999;
+			  text-align: left; color: #333333;
+			  }
+		h3	 {font-family: Snell Roundhand, cursive; background-color:#119923;
+			 text-align: center; color: #323232; font-size:40px;
+			 }
+		
+		img.center 	{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		}
+		
+		.marquee-outer {
+			 height: 100px;	
+			 overflow: hidden;
+			 position: relative;
+			 color: orange;
+			}
+			.marquee-inner {
+			 position: absolute;
+			 width: 100%;
+			 height: 100%;
+			 margin: 0;
+			 line-height: 50px;
+			 text-align: center;
+			 /* Starting position */
+			 -moz-transform:translateX(100%);
+			 -webkit-transform:translateX(100%);	
+			 transform:translateX(100%);
+			 /* Apply animation to this element */	
+			 -moz-animation: scroll-left 5s linear infinite;
+			 -webkit-animation: scroll-left 5s linear infinite;
+			 animation: scroll-left 5s linear infinite;
+			}
+			/* Move it (define the animation) */
+			@-moz-keyframes scroll-left {
+			 0%   { -moz-transform: translateX(100%); }
+			 100% { -moz-transform: translateX(-100%); }
+			}
+			@-webkit-keyframes scroll-left {
+			 0%   { -webkit-transform: translateX(100%); }
+			 100% { -webkit-transform: translateX(-100%); }
+			}
+			@keyframes scroll-left {
+			 0%   { 
+			 -moz-transform: translateX(100%); /* Browser bug fix */
+			 -webkit-transform: translateX(100%); /* Browser bug fix */
+			 transform: translateX(100%); 		
+			 }
+			 100% { 
+			 -moz-transform: translateX(-100%); /* Browser bug fix */
+			 -webkit-transform: translateX(-100%); /* Browser bug fix */
+			 transform: translateX(-100%); 
+			 }
+			}
+
+
+</style>
+<div class="marquee-outer">
+<div class="marquee-inner"><img src="trumphead80.png" width="94" height="88" alt="Swimming fish"></div>
+
+</div>
+
+<title>Andrew's Website</title>
+<script type="text/javascript">
+// <![CDATA[
+var bits=80; // how many bits
+var speed=33; // how fast - smaller is faster
+var bangs=5; // how many can be launched simultaneously (note that using too many can slow the script down)
+var colours=new Array("#03f", "#f03", "#0e0", "#93f", "#0cf", "#f93", "#f0c"); 
+//                     blue    red     green   purple  cyan    orange  pink
+
+/****************************
+*      Fireworks Effect     *
+*(c)2004-14 mf2fm web-design*
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var bangheight=new Array();
+var intensity=new Array();
+var colour=new Array();
+var Xpos=new Array();
+var Ypos=new Array();
+var dX=new Array();
+var dY=new Array();
+var stars=new Array();
+var decay=new Array();
+var swide=800;
+var shigh=600;
+var boddie;
+
+if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+  var oldonload=window.onload;
+  if (typeof(oldonload)!='function') window.onload=funky;
+  else window.onload=function() {
+    if (oldonload) oldonload();
+    funky();
+  }
+}
+
+addRVLoadEvent(light_blue_touchpaper);
+
+function light_blue_touchpaper() { if (document.getElementById) {
+  var i;
+  boddie=document.createElement("div");
+  boddie.style.position="fixed";
+  boddie.style.top="0px";
+  boddie.style.left="0px";
+  boddie.style.overflow="visible";
+  boddie.style.width="1px";
+  boddie.style.height="1px";
+  boddie.style.backgroundColor="transparent";
+  document.body.appendChild(boddie);
+  set_width();
+  for (i=0; i<bangs; i++) {
+    write_fire(i);
+    launch(i);
+    setInterval('stepthrough('+i+')', speed);
+  }
+}}
+
+function write_fire(N) {
+  var i, rlef, rdow;
+  stars[N+'r']=createDiv('|', 12);
+  boddie.appendChild(stars[N+'r']);
+  for (i=bits*N; i<bits+bits*N; i++) {
+    stars[i]=createDiv('*', 13);
+    boddie.appendChild(stars[i]);
+  }
+}
+
+function createDiv(char, size) {
+  var div=document.createElement("div");
+  div.style.font=size+"px monospace";
+  div.style.position="absolute";
+  div.style.backgroundColor="transparent";
+  div.appendChild(document.createTextNode(char));
+  return (div);
+}
+
+function launch(N) {
+  colour[N]=Math.floor(Math.random()*colours.length);
+  Xpos[N+"r"]=swide*0.5;
+  Ypos[N+"r"]=shigh-5;
+  bangheight[N]=Math.round((0.5+Math.random())*shigh*0.4);
+  dX[N+"r"]=(Math.random()-0.5)*swide/bangheight[N];
+  if (dX[N+"r"]>1.25) stars[N+"r"].firstChild.nodeValue="/";
+  else if (dX[N+"r"]<-1.25) stars[N+"r"].firstChild.nodeValue="\\";
+  else stars[N+"r"].firstChild.nodeValue="|";
+  stars[N+"r"].style.color=colours[colour[N]];
+}
+
+function bang(N) {
+  var i, Z, A=0;
+  for (i=bits*N; i<bits+bits*N; i++) { 
+    Z=stars[i].style;
+    Z.left=Xpos[i]+"px";
+    Z.top=Ypos[i]+"px";
+    if (decay[i]) decay[i]--;
+    else A++;
+    if (decay[i]==15) Z.fontSize="7px";
+    else if (decay[i]==7) Z.fontSize="2px";
+    else if (decay[i]==1) Z.visibility="hidden";
+	if (decay[i]>1 && Math.random()<.1) {
+	   Z.visibility="hidden";
+	   setTimeout('stars['+i+'].style.visibility="visible"', speed-1);
+	}
+    Xpos[i]+=dX[i];
+    Ypos[i]+=(dY[i]+=1.25/intensity[N]);
+
+  }
+  if (A!=bits) setTimeout("bang("+N+")", speed);
+}
+
+function stepthrough(N) { 
+  var i, M, Z;
+  var oldx=Xpos[N+"r"];
+  var oldy=Ypos[N+"r"];
+  Xpos[N+"r"]+=dX[N+"r"];
+  Ypos[N+"r"]-=4;
+  if (Ypos[N+"r"]<bangheight[N]) {
+    M=Math.floor(Math.random()*3*colours.length);
+    intensity[N]=5+Math.random()*4;
+    for (i=N*bits; i<bits+bits*N; i++) {
+      Xpos[i]=Xpos[N+"r"];
+      Ypos[i]=Ypos[N+"r"];
+      dY[i]=(Math.random()-0.5)*intensity[N];
+      dX[i]=(Math.random()-0.5)*(intensity[N]-Math.abs(dY[i]))*1.25;
+      decay[i]=16+Math.floor(Math.random()*16);
+      Z=stars[i];
+      if (M<colours.length) Z.style.color=colours[i%2?colour[N]:M];
+      else if (M<2*colours.length) Z.style.color=colours[colour[N]];
+      else Z.style.color=colours[i%colours.length];
+      Z.style.fontSize="13px";
+      Z.style.visibility="visible";
+    }
+    bang(N);
+    launch(N);
+  }
+  stars[N+"r"].style.left=oldx+"px";
+  stars[N+"r"].style.top=oldy+"px";
+} 
+
+window.onresize=set_width;
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)!="undefined" && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min;
+  shigh=sh_min;
+}
+// ]]>
+</script>
+</head>
+
+<link rel ="stylesheet" href= 'https://fonts.googleapis.com/css?family=Oleo+Script' rel ='style' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+
+<body>
+
+<img src="bison2.gif" alt="A Bison" class ="center" style ="width:400px;height:400px;">
+
+<ul class ="examp1">
+	<li class ="list1">One</li> 
+	<li class ="list1">two</li>
+	<li class ="list1"> three</li>
+	<li class ="list1"> four</li>
+	<li class ="list1"> five</li>
+</ul>
+
+<h1>
+	Howdy.
+</h1>
+
+	<p class ="example2">This is a <em>paragraph.<em> you can have endless amounts of fun with</br> paragraphs</p>
+
+<h2>
+<img src="terminator.gif" alt="This will display an animated GIF" class="right" />
+Asta la Vista
+<textarea name ="textbox" cols="50px" rows ="20px" class ="right">
+Enter text here...
+</textarea>
+</h2>
+
+	<p class ="example2">
+	<q> baby <q>
+	</p>
+<h3>
+	<i>Bison</i> are big
+</h3>
+<h4>
+	<abbr title = "Arkansas Coding Academy"> ACA</abbr>
+</h4>
+
+<h5>
+	<a href="www.ytmnd.com"></a>
+</h5>
+<h6></h6>
+
+</body>
+
+</html>
